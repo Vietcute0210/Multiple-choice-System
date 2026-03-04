@@ -1,0 +1,72 @@
+﻿<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PTIT Admin - Users</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;600;700;800&family=Oswald:wght@500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../assets/css/base.css" />
+  <link rel="stylesheet" href="../assets/css/components.css" />
+  <link rel="stylesheet" href="../assets/css/admin/admin-base.css" />
+</head>
+<body>
+  <div class="admin-shell">
+    <aside class="admin-sidebar">
+      <div class="admin-brand">
+        <img src="../assets/images/ptit.png" alt="PTIT" />
+        <div><strong>PTIT ADMIN</strong><small>Exam Management</small></div>
+      </div>
+      <nav class="admin-nav">
+        <a href="dashboard.html">Dashboard</a>
+        <a href="exams.html">Quản lý kỳ thi</a>
+        <a href="exam-edit.html">Tạo / sửa kỳ thi</a>
+        <a class="active" href="users.html">Quản lý sinh viên</a>
+        <a href="statistics.html">Thống kê</a>
+        <a href="student-results.html">KQ theo sinh viên</a>
+      </nav>
+    </aside>
+
+    <main class="admin-main">
+      <header class="admin-topbar">
+        <h1>Quản lý sinh viên</h1>
+        <div style="display:flex; gap:8px;">
+          <button class="btn btn-primary btn-sm" id="btn-add-user" type="button">+ Thêm sinh viên</button>
+          <button class="btn btn-outline btn-sm" id="btn-admin-logout" type="button">Đăng xuất</button>
+        </div>
+      </header>
+
+      <div class="admin-body">
+        <section class="card">
+          <div class="card-head">
+            <h3>Danh sách sinh viên</h3>
+            <input class="form-control" id="user-search" style="width: 240px;" placeholder="Tìm theo tên hoặc MSSV..." />
+          </div>
+          <div class="card-body" style="padding:0;">
+            <div class="table-wrap">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Họ và tên</th>
+                    <th>MSSV</th>
+                    <th>Email</th>
+                    <th>Lớp</th>
+                    <th>Lượt thi</th>
+                    <th>Điểm TB</th>
+                    <th>Thao tác</th>
+                  </tr>
+                </thead>
+                <tbody id="users-tbody"></tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+  </div>
+
+  <script type="module" src="../assets/js/admin/users-page.js"></script>
+</body>
+</html>
+

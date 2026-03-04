@@ -1,0 +1,54 @@
+﻿<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PTIT Admin - Login</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;600;700;800&family=Oswald:wght@500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../assets/css/base.css" />
+  <link rel="stylesheet" href="../assets/css/components.css" />
+  <link rel="stylesheet" href="../assets/css/auth.css" />
+</head>
+<body>
+  <div class="auth-wrap">
+    <aside class="auth-brand" style="background: linear-gradient(150deg, #121f44 0%, #d50f2f 80%);">
+      <img src="../assets/images/ptit.png" alt="PTIT" class="brand-logo" />
+      <h1>ADMIN PORTAL</h1>
+      <p>Bảng điều khiển quản trị kỳ thi, sinh viên, kết quả và thống kê tổng hợp.</p>
+    </aside>
+
+    <main class="auth-form">
+      <section class="card auth-card">
+        <h2>Đăng nhập quản trị</h2>
+        <p class="subtitle">Chỉ dành cho quản trị viên có thẩm quyền.</p>
+
+        <form id="admin-login-form" class="form-grid" novalidate>
+          <div class="field" id="field-admin-user">
+            <label class="form-label" for="admin-user">Tên đăng nhập</label>
+            <input class="form-control" id="admin-user" type="text" placeholder="admin" />
+            <div class="form-error">Vui lòng nhập tài khoản.</div>
+          </div>
+          <div class="field" id="field-admin-pass">
+            <label class="form-label" for="admin-pass">Mật khẩu</label>
+            <input class="form-control" id="admin-pass" type="password" placeholder="••••••••" />
+            <div class="form-error">Vui lòng nhập mật khẩu.</div>
+          </div>
+          <div class="auth-rows">
+            <button class="btn btn-navy btn-full" type="submit">Đăng nhập</button>
+            <button class="btn btn-outline btn-full" id="btn-admin-demo" type="button">Đăng nhập demo (Admin)</button>
+          </div>
+        </form>
+
+        <p class="auth-footnote">
+          Quay lại trang sinh viên <a href="../index.html">tại đây</a>
+        </p>
+      </section>
+    </main>
+  </div>
+
+  <script type="module" src="../assets/js/admin/admin-login-page.js"></script>
+</body>
+</html>
+

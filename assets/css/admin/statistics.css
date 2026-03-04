@@ -1,0 +1,9 @@
+﻿.stat-filter-row {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.stat-chart {
+  height: 260px;
+}

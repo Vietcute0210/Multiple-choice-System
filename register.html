@@ -1,0 +1,68 @@
+﻿<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PTIT Exam - Đăng ký</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;600;700;800&family=Oswald:wght@500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/base.css" />
+  <link rel="stylesheet" href="assets/css/components.css" />
+  <link rel="stylesheet" href="assets/css/auth.css" />
+</head>
+<body>
+  <div class="auth-wrap">
+    <aside class="auth-brand">
+      <img src="assets/images/ptit.png" alt="PTIT" class="brand-logo" />
+      <h1>PTIT EXAM SYSTEM</h1>
+      <p>Tạo tài khoản mới để bắt đầu làm bài thi.</p>
+    </aside>
+
+    <main class="auth-form">
+      <section class="card auth-card">
+        <h2>Đăng ký tài khoản</h2>
+        <p class="subtitle">Điền đầy đủ thông tin để tạo tài khoản sinh viên.</p>
+
+        <form id="register-form" class="form-grid" novalidate>
+          <div class="field" id="field-reg-name">
+            <label class="form-label" for="reg-name">Họ và tên</label>
+            <input class="form-control" id="reg-name" type="text" placeholder="Nguyễn Văn A" />
+            <div class="form-error">Tên phải có ít nhất 2 ký tự.</div>
+          </div>
+          <div class="field" id="field-reg-email">
+            <label class="form-label" for="reg-email">Email</label>
+            <input class="form-control" id="reg-email" type="email" placeholder="example@ptit.edu.vn" />
+            <div class="form-error">Email không hợp lệ.</div>
+          </div>
+          <div class="field" id="field-reg-user">
+            <label class="form-label" for="reg-user">Tên đăng nhập</label>
+            <input class="form-control" id="reg-user" type="text" placeholder="Tối thiểu 4 ký tự" />
+            <div class="form-error">Tên đăng nhập tối thiểu 4 ký tự.</div>
+          </div>
+          <div class="field" id="field-reg-pass">
+            <label class="form-label" for="reg-pass">Mật khẩu</label>
+            <input class="form-control" id="reg-pass" type="password" placeholder="Tối thiểu 6 ký tự" />
+            <div class="form-error">Mật khẩu tối thiểu 6 ký tự.</div>
+          </div>
+          <div class="field" id="field-reg-cpass">
+            <label class="form-label" for="reg-cpass">Xác nhận mật khẩu</label>
+            <input class="form-control" id="reg-cpass" type="password" placeholder="Nhập lại mật khẩu" />
+            <div class="form-error">Mật khẩu xác nhận chưa khớp.</div>
+          </div>
+          <div class="auth-rows">
+            <button class="btn btn-primary btn-full" type="submit">Tạo tài khoản</button>
+          </div>
+        </form>
+
+        <p class="auth-footnote">
+          Đã có tài khoản? <a href="index.html">Quay lại đăng nhập</a>
+        </p>
+      </section>
+    </main>
+  </div>
+
+  <script type="module" src="assets/js/pages/register-page.js"></script>
+</body>
+</html>
+

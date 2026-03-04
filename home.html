@@ -1,0 +1,62 @@
+﻿<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PTIT Exam - Trang chủ</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;600;700;800&family=Oswald:wght@500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/base.css" />
+  <link rel="stylesheet" href="assets/css/components.css" />
+  <link rel="stylesheet" href="assets/css/home.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="logo-row">
+      <img src="assets/images/ptit.png" alt="PTIT" />
+      <strong>PTIT EXAM</strong>
+    </div>
+    <nav class="topbar-nav">
+      <a class="active" href="home.html">Trang chủ</a>
+      <a href="results.html">Kết quả của tôi</a>
+    </nav>
+    <div class="user-chip">
+      <span class="user-avatar" id="user-avatar">SV</span>
+      <span id="user-name">Sinh viên</span>
+      <button class="btn btn-ghost btn-sm" id="btn-logout" type="button">Đăng xuất</button>
+    </div>
+  </header>
+
+  <main class="main-area container">
+    <h1 class="page-title">Danh sách kỳ thi</h1>
+    <p class="page-subtitle">Chọn bài thi phù hợp và bắt đầu làm bài ngay.</p>
+
+    <div class="exam-filter-row">
+      <div class="search-wrap">
+        <input class="form-control" id="exam-search" type="text" placeholder="Tìm theo tên bài thi hoặc môn học..." />
+      </div>
+      <select class="form-control" id="exam-filter" style="width: 170px;">
+        <option value="">Tất cả loại</option>
+        <option value="Luyện tập">Luyện tập</option>
+        <option value="Giữa kỳ">Giữa kỳ</option>
+        <option value="Cuối kỳ">Cuối kỳ</option>
+      </select>
+      <select class="form-control" id="status-filter" style="width: 170px;">
+        <option value="">Tất cả trạng thái</option>
+        <option value="free">Tự do</option>
+        <option value="scheduled">Có lịch</option>
+        <option value="active">Đang mở</option>
+        <option value="closed">Đã đóng</option>
+      </select>
+    </div>
+
+    <section id="exams-grid" class="exams-grid"></section>
+
+    <section class="summary-grid" id="my-summary"></section>
+  </main>
+
+  <script type="module" src="assets/js/pages/home-page.js"></script>
+</body>
+</html>
+
