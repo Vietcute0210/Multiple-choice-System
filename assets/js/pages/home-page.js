@@ -1,26 +1,28 @@
 ﻿import '../app-init.js';
 import { requireStudent } from '../core/guards.js';
 import { logoutStudent } from '../core/auth.js';
-import { getExams, getResults, getCurrentUser, setExamState, clearExamState } from '../core/storage.js';
-import { initialsFromName, showToast, statusBadge } from '../core/ui.js';
+import { getExams, getResults, setExamState, clearExamState } from '../core/storage.js';
+import { initialsFromName, statusBadge } from '../core/ui.js';
 
 const user = requireStudent();
 if (!user) {
   throw new Error('Unauthorized');
 }
 
+const featuredRoot = document.getElementById('featured-exam');
 const examsGrid = document.getElementById('exams-grid');
 const summaryRoot = document.getElementById('my-summary');
 const searchInput = document.getElementById('exam-search');
 const typeFilter = document.getElementById('exam-filter');
 const statusFilter = document.getElementById('status-filter');
+const tabsRoot = document.getElementById('type-tabs');
 
 function startExam(examId) {
   const exams = getExams();
   const exam = exams.find((item) => Number(item.id) === Number(examId));
   if (!exam) return;
   if (exam.status === 'closed') {
-    showToast('Kỳ thi đã đóng.', 'error');
+    window.alert('Kỳ thi đã đóng.');
     return;
   }
 
@@ -39,17 +41,40 @@ function startExam(examId) {
 }
 
 function renderSummary() {
+  const exams = getExams();
   const results = getResults().filter((item) => Number(item.userId) === Number(user.id));
-  const total = results.length;
-  const avg = total ? (results.reduce((sum, item) => sum + Number(item.score || 0), 0) / total).toFixed(1) : '0.0';
-  const best = total ? Math.max(...results.map((item) => Number(item.score || 0))).toFixed(1) : '0.0';
-  const passRate = total ? Math.round((results.filter((item) => Number(item.score) >= 5).length / total) * 100) : 0;
+  const totalTaken = results.length;
+  const completion = exams.length ? Math.round((totalTaken / exams.length) * 100) : 0;
+  const avg = totalTaken ? (results.reduce((sum, item) => sum + Number(item.score || 0), 0) / totalTaken).toFixed(1) : '0.0';
 
   summaryRoot.innerHTML = `
-    <article class="summary-box"><strong>${total}</strong><span>Bài đã làm</span></article>
-    <article class="summary-box"><strong>${avg}</strong><span>Điểm trung bình</span></article>
-    <article class="summary-box"><strong>${best}</strong><span>Điểm cao nhất</span></article>
-    <article class="summary-box"><strong>${passRate}%</strong><span>Tỷ lệ đạt</span></article>
+    <article class="summary-box"><span>Tỷ lệ hoàn thành</span><strong>${completion}%</strong></article>
+    <article class="summary-box"><span>Điểm trung bình</span><strong>${avg}</strong></article>
+    <article class="summary-box"><span>Đã tham gia</span><strong>${totalTaken} kỳ thi</strong></article>
+  `;
+}
+
+function renderFeatured() {
+  const exams = getExams();
+  const featured = exams.find((item) => item.status !== 'closed') || exams[0];
+  if (!featured) {
+    featuredRoot.innerHTML = '';
+    return;
+  }
+
+  featuredRoot.innerHTML = `
+    <div>
+      <div class="hero-kicker">Kỳ thi nổi bật nhất</div>
+      <h2 class="hero-title">${featured.name}</h2>
+      <p class="hero-desc">${featured.desc || 'Chuẩn bị sẵn sàng cho kỳ thi quan trọng nhất của học kỳ này.'}</p>
+      <div class="hero-meta">
+        <span>${featured.duration} phút</span>
+        <span>${featured.total} câu hỏi</span>
+        <span>${featured.subject}</span>
+      </div>
+      <button class="btn btn-primary hero-action" type="button" data-start-highlight="${featured.id}">Bắt đầu ngay</button>
+    </div>
+    <div class="hero-right">Hãy tỏa sáng!</div>
   `;
 }
 
@@ -67,7 +92,7 @@ function renderExams() {
   });
 
   if (!filtered.length) {
-    examsGrid.innerHTML = '<p style="grid-column: 1 / -1; text-align:center; color: var(--text-muted);">Không tìm thấy kỳ thi phù hợp.</p>';
+    examsGrid.innerHTML = '<p style="grid-column: 1 / -1; text-align: center; color: var(--text-muted);">Không tìm thấy kỳ thi phù hợp.</p>';
     return;
   }
 
@@ -76,28 +101,39 @@ function renderExams() {
       const badge = statusBadge(exam.status);
       return `
       <article class="exam-card">
-        <div style="display:flex; justify-content:space-between; gap:8px; align-items:flex-start;">
-          <h3>${exam.name}</h3>
-          <span class="badge ${badge.className}">${badge.label}</span>
+        <div class="exam-card-top">
+          <span class="exam-type">${exam.type}</span>
+          <span class="exam-status ${exam.status}">${badge.label}</span>
         </div>
-        <p>${exam.desc || ''}</p>
+        <h3>${exam.name}</h3>
+        <p class="exam-desc">${exam.desc || ''}</p>
         <div class="exam-meta">
-          <span>${exam.subject}</span>
           <span>${exam.duration} phút</span>
           <span>${exam.total} câu</span>
-          <span>${exam.type}</span>
+          <span>${exam.subject}</span>
         </div>
         <button class="btn ${exam.status === 'closed' ? 'btn-outline' : 'btn-primary'} btn-sm" data-start-exam="${exam.id}" ${exam.status === 'closed' ? 'disabled' : ''}>
-          ${exam.status === 'closed' ? 'Đã đóng' : 'Bắt đầu làm bài'}
+          ${exam.status === 'closed' ? 'Kỳ thi đã đóng' : 'Bắt đầu ngay'}
         </button>
       </article>`;
     })
     .join('');
 }
 
+function syncTabs() {
+  if (!tabsRoot) return;
+  const currentType = typeFilter.value;
+  tabsRoot.querySelectorAll('.tab-btn').forEach((button) => {
+    button.classList.toggle('active', button.dataset.type === currentType);
+  });
+}
+
 function bindEvents() {
   searchInput.addEventListener('input', renderExams);
-  typeFilter.addEventListener('change', renderExams);
+  typeFilter.addEventListener('change', () => {
+    syncTabs();
+    renderExams();
+  });
   statusFilter.addEventListener('change', renderExams);
 
   document.getElementById('btn-logout').addEventListener('click', () => {
@@ -110,13 +146,31 @@ function bindEvents() {
     if (!button) return;
     startExam(button.getAttribute('data-start-exam'));
   });
+
+  featuredRoot.addEventListener('click', (event) => {
+    const button = event.target.closest('[data-start-highlight]');
+    if (!button) return;
+    startExam(button.getAttribute('data-start-highlight'));
+  });
+
+  tabsRoot.addEventListener('click', (event) => {
+    const button = event.target.closest('.tab-btn');
+    if (!button) return;
+    typeFilter.value = button.dataset.type || '';
+    syncTabs();
+    renderExams();
+  });
 }
 
 (function init() {
   document.getElementById('user-name').textContent = user.name;
   document.getElementById('user-avatar').textContent = initialsFromName(user.name);
+  const userCode = document.getElementById('user-msv');
+  if (userCode) userCode.textContent = user.msv || user.email || '';
+
   bindEvents();
-  renderExams();
+  renderFeatured();
   renderSummary();
-  showToast(`Xin chào ${user.name}`, 'success');
+  syncTabs();
+  renderExams();
 })();

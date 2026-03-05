@@ -11,58 +11,70 @@
   <link rel="stylesheet" href="assets/css/components.css" />
   <link rel="stylesheet" href="assets/css/auth.css" />
 </head>
-<body>
-  <div class="auth-wrap">
-    <aside class="auth-brand">
-      <img src="assets/images/ptit.png" alt="PTIT" class="brand-logo" />
-      <h1>PTIT EXAM SYSTEM</h1>
-      <p>Tạo tài khoản mới để bắt đầu làm bài thi.</p>
-    </aside>
+<body class="auth-page student-auth-page">
+  <div class="auth-shell">
+    <div class="auth-wrap student-auth-wrap">
+      <aside class="auth-brand">
+        <div class="auth-brand-head">
+          <img src="assets/images/ptit.png" alt="PTIT" class="brand-logo" />
+          <strong>PTIT EXAM SYSTEM</strong>
+        </div>
+        <h1>Nâng tầm tri thức,<br />Kiến tạo tương lai.</h1>
+        <p>Đăng ký tài khoản mới để bắt đầu hành trình học tập, thi thử và đánh giá năng lực chuyên ngành.</p>
+        <ul class="auth-brand-list">
+          <li>Hồ sơ sinh viên được đồng bộ theo tài khoản</li>
+          <li>Quản lý kết quả học tập theo từng học kỳ</li>
+        </ul>
+        <p class="auth-brand-copy">© 2026 PTIT Exam System.</p>
+      </aside>
 
-    <main class="auth-form">
-      <section class="card auth-card">
-        <h2>Đăng ký tài khoản</h2>
-        <p class="subtitle">Điền đầy đủ thông tin để tạo tài khoản sinh viên.</p>
+      <main class="auth-form">
+        <section class="auth-card">
+          <h2>Tạo tài khoản</h2>
+          <p class="subtitle">Điền đầy đủ thông tin để đăng ký tài khoản sinh viên mới.</p>
 
-        <form id="register-form" class="form-grid" novalidate>
-          <div class="field" id="field-reg-name">
-            <label class="form-label" for="reg-name">Họ và tên</label>
-            <input class="form-control" id="reg-name" type="text" placeholder="Nguyễn Văn A" />
-            <div class="form-error">Tên phải có ít nhất 2 ký tự.</div>
-          </div>
-          <div class="field" id="field-reg-email">
-            <label class="form-label" for="reg-email">Email</label>
-            <input class="form-control" id="reg-email" type="email" placeholder="example@ptit.edu.vn" />
-            <div class="form-error">Email không hợp lệ.</div>
-          </div>
-          <div class="field" id="field-reg-user">
-            <label class="form-label" for="reg-user">Tên đăng nhập</label>
-            <input class="form-control" id="reg-user" type="text" placeholder="Tối thiểu 4 ký tự" />
-            <div class="form-error">Tên đăng nhập tối thiểu 4 ký tự.</div>
-          </div>
-          <div class="field" id="field-reg-pass">
-            <label class="form-label" for="reg-pass">Mật khẩu</label>
-            <input class="form-control" id="reg-pass" type="password" placeholder="Tối thiểu 6 ký tự" />
-            <div class="form-error">Mật khẩu tối thiểu 6 ký tự.</div>
-          </div>
-          <div class="field" id="field-reg-cpass">
-            <label class="form-label" for="reg-cpass">Xác nhận mật khẩu</label>
-            <input class="form-control" id="reg-cpass" type="password" placeholder="Nhập lại mật khẩu" />
-            <div class="form-error">Mật khẩu xác nhận chưa khớp.</div>
-          </div>
-          <div class="auth-rows">
-            <button class="btn btn-primary btn-full" type="submit">Tạo tài khoản</button>
-          </div>
-        </form>
+          <nav class="auth-switch" aria-label="Auth switch">
+            <a href="index.html">Đăng nhập</a>
+            <a class="active" href="register.html">Đăng ký</a>
+          </nav>
 
-        <p class="auth-footnote">
-          Đã có tài khoản? <a href="index.html">Quay lại đăng nhập</a>
-        </p>
-      </section>
-    </main>
+          <form id="register-form" class="form-grid" novalidate>
+            <div class="field" id="field-reg-name">
+              <label class="form-label" for="reg-name">Họ và tên</label>
+              <input class="form-control" id="reg-name" type="text" placeholder="Nguyễn Văn A" />
+              <div class="form-error">Tên phải có ít nhất 2 ký tự.</div>
+            </div>
+            <div class="field" id="field-reg-email">
+              <label class="form-label" for="reg-email">Email</label>
+              <input class="form-control" id="reg-email" type="email" placeholder="example@ptit.edu.vn" />
+              <div class="form-error">Email không hợp lệ.</div>
+            </div>
+            <div class="field" id="field-reg-user">
+              <label class="form-label" for="reg-user">Tên đăng nhập</label>
+              <input class="form-control" id="reg-user" type="text" placeholder="Tối thiểu 4 ký tự" />
+              <div class="form-error">Tên đăng nhập tối thiểu 4 ký tự.</div>
+            </div>
+            <div class="field" id="field-reg-pass">
+              <label class="form-label" for="reg-pass">Mật khẩu</label>
+              <input class="form-control" id="reg-pass" type="password" placeholder="Tối thiểu 6 ký tự" />
+              <div class="form-error">Mật khẩu tối thiểu 6 ký tự.</div>
+            </div>
+            <div class="field" id="field-reg-cpass">
+              <label class="form-label" for="reg-cpass">Xác nhận mật khẩu</label>
+              <input class="form-control" id="reg-cpass" type="password" placeholder="Nhập lại mật khẩu" />
+              <div class="form-error">Mật khẩu xác nhận chưa khớp.</div>
+            </div>
+            <div class="auth-rows">
+              <button class="btn btn-primary btn-full" type="submit">Đăng ký ngay</button>
+            </div>
+          </form>
+
+          <p class="auth-help">Đã có tài khoản? <a href="index.html">Quay lại đăng nhập</a></p>
+        </section>
+      </main>
+    </div>
   </div>
 
   <script type="module" src="assets/js/pages/register-page.js"></script>
 </body>
 </html>
-

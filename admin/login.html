@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>PTIT Admin - Login</title>
+  <title>PTIT Admin - Đăng nhập</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;600;700;800&family=Oswald:wght@500;700&display=swap" rel="stylesheet" />
@@ -11,44 +11,61 @@
   <link rel="stylesheet" href="../assets/css/components.css" />
   <link rel="stylesheet" href="../assets/css/auth.css" />
 </head>
-<body>
-  <div class="auth-wrap">
-    <aside class="auth-brand" style="background: linear-gradient(150deg, #121f44 0%, #d50f2f 80%);">
-      <img src="../assets/images/ptit.png" alt="PTIT" class="brand-logo" />
-      <h1>ADMIN PORTAL</h1>
-      <p>Bảng điều khiển quản trị kỳ thi, sinh viên, kết quả và thống kê tổng hợp.</p>
-    </aside>
+<body class="auth-page admin-auth-page">
+  <div class="admin-shell">
+    <a class="admin-back-link" href="../index.html">Quay lại cổng sinh viên</a>
 
-    <main class="auth-form">
-      <section class="card auth-card">
-        <h2>Đăng nhập quản trị</h2>
-        <p class="subtitle">Chỉ dành cho quản trị viên có thẩm quyền.</p>
+    <main class="admin-auth-main">
+      <section class="auth-card admin-auth-card">
+        <div class="admin-brand-icon">
+          <img src="../assets/images/ptit.png" alt="PTIT" class="brand-logo" />
+        </div>
+        <h1>PTIT EXAM SYSTEM</h1>
+        <p class="admin-subtitle">CỔNG QUẢN TRỊ VIÊN</p>
+        <p class="admin-security">Hệ thống bảo mật cao</p>
 
         <form id="admin-login-form" class="form-grid" novalidate>
           <div class="field" id="field-admin-user">
             <label class="form-label" for="admin-user">Tên đăng nhập</label>
-            <input class="form-control" id="admin-user" type="text" placeholder="admin" />
+            <input class="form-control" id="admin-user" type="text" placeholder="admin_ptit" />
             <div class="form-error">Vui lòng nhập tài khoản.</div>
           </div>
           <div class="field" id="field-admin-pass">
-            <label class="form-label" for="admin-pass">Mật khẩu</label>
-            <input class="form-control" id="admin-pass" type="password" placeholder="••••••••" />
+            <div class="field-head">
+              <label class="form-label" for="admin-pass">Mật khẩu</label>
+              <a class="field-link" href="#">Quên mật khẩu?</a>
+            </div>
+            <input class="form-control" id="admin-pass" type="password" placeholder="********" />
             <div class="form-error">Vui lòng nhập mật khẩu.</div>
           </div>
+          <label class="remember-row">
+            <input type="checkbox" />
+            <span>Duy trì đăng nhập trên thiết bị này</span>
+          </label>
           <div class="auth-rows">
-            <button class="btn btn-navy btn-full" type="submit">Đăng nhập</button>
-            <button class="btn btn-outline btn-full" id="btn-admin-demo" type="button">Đăng nhập demo (Admin)</button>
+            <button class="btn btn-primary btn-full" type="submit">Xác nhận đăng nhập</button>
+            <button class="btn btn-outline btn-full" id="btn-admin-demo" type="button">Đăng nhập demo admin</button>
           </div>
         </form>
 
-        <p class="auth-footnote">
-          Quay lại trang sinh viên <a href="../index.html">tại đây</a>
-        </p>
+        <section class="admin-alert">
+          <strong>Lưu ý an toàn:</strong>
+          <p>Truy cập này chỉ dành cho nhân viên có thẩm quyền. Mọi hoạt động trái phép sẽ bị ghi lại và xử lý theo quy định của Học viện.</p>
+        </section>
       </section>
     </main>
+
+    <footer class="admin-auth-footer">
+      <p>Gặp sự cố khi đăng nhập?</p>
+      <div>
+        <a href="#">Trung tâm hỗ trợ</a>
+        <span>•</span>
+        <a href="#">Liên hệ kỹ thuật PTIT</a>
+      </div>
+      <small>© 2026 PTIT Exam System. All rights reserved.</small>
+    </footer>
   </div>
 
   <script type="module" src="../assets/js/admin/admin-login-page.js"></script>
 </body>
 </html>
-

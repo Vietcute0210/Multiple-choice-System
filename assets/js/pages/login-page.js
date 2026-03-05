@@ -66,5 +66,5 @@ function loginDemoStudent() {
   }
 
   form.addEventListener('submit', submitLogin);
-  demoButton.addEventListener('click', loginDemoStudent);
+  if (demoButton) demoButton.addEventListener('click', loginDemoStudent);
 })();

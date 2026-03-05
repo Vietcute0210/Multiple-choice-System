@@ -6,7 +6,7 @@
   --ptit-gold-dark: #cc9f10;
   --ptit-ink: #1d2238;
   --ptit-navy: #202f5a;
-  --bg-page: #f6f7fb;
+  --bg-page: #eef1f6;
   --bg-panel: #ffffff;
   --text-main: #1f263b;
   --text-muted: #6f7891;
@@ -41,10 +41,7 @@ html {
 body {
   font-family: 'Be Vietnam Pro', 'Segoe UI', sans-serif;
   color: var(--text-main);
-  background:
-    radial-gradient(circle at 0 0, rgba(213, 15, 47, 0.08), transparent 35%),
-    radial-gradient(circle at 100% 100%, rgba(245, 193, 25, 0.12), transparent 40%),
-    var(--bg-page);
+  background: var(--bg-page);
   min-height: 100vh;
   line-height: 1.45;
 }
@@ -91,13 +88,13 @@ button {
 }
 
 .topbar {
-  height: 70px;
+  height: 68px;
   background: linear-gradient(90deg, #182750 0%, #d50f2f 85%);
   color: #fff;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 24px;
+  padding: 0 20px;
   box-shadow: var(--shadow-md);
   position: sticky;
   top: 0;
@@ -111,7 +108,7 @@ button {
 }
 
 .logo-row img {
-  height: 42px;
+  height: 38px;
   width: auto;
   object-fit: contain;
 }

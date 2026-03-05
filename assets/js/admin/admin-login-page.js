@@ -44,10 +44,12 @@ function submitLogin(event) {
   }
 
   form.addEventListener('submit', submitLogin);
-  demoButton.addEventListener('click', () => {
-    const admin = loginAdmin('admin', 'admin123');
-    if (!admin) return;
-    showToast('Đăng nhập demo admin thành công.', 'success');
-    setTimeout(gotoDashboard, 250);
-  });
+  if (demoButton) {
+    demoButton.addEventListener('click', () => {
+      const admin = loginAdmin('admin', 'admin123');
+      if (!admin) return;
+      showToast('Đăng nhập demo admin thành công.', 'success');
+      setTimeout(gotoDashboard, 250);
+    });
+  }
 })();
