@@ -1,43 +1,45 @@
-﻿.form-grid-2 {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 12px;
-}
-
-.q-editor-item {
-  border: 1.5px solid var(--border);
-  border-radius: 11px;
-  padding: 13px;
-  margin-bottom: 10px;
-  background: #fff;
-}
-
-.q-editor-head {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 10px;
-}
-
-.q-editor-head span {
-  color: var(--ptit-red);
-  font-size: 0.8rem;
-  font-weight: 800;
-}
-
-.option-row {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  margin-bottom: 8px;
-}
-
-.option-row input[type='text'] {
-  flex: 1;
-}
-
-@media (max-width: 900px) {
-  .form-grid-2 {
-    grid-template-columns: 1fr;
-  }
-}
+/* Styles cho exam-edit.css */
+
+.form-grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.q-editor-item {
+  border: 1.5px solid var(--border);
+  border-radius: 11px;
+  padding: 13px;
+  margin-bottom: 10px;
+  background: #fff;
+}
+
+.q-editor-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.q-editor-head span {
+  color: var(--ptit-red);
+  font-size: 0.8rem;
+  font-weight: 800;
+}
+
+.option-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.option-row input[type='text'] {
+  flex: 1;
+}
+
+@media (max-width: 900px) {
+  .form-grid-2 {
+    grid-template-columns: 1fr;
+  }
+}

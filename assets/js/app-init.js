@@ -1,3 +1,3 @@
-﻿import { ensureSeedData } from './core/storage.js';
-
-ensureSeedData();
+import { ensureSeedData } from './core/storage.js';
+
+ensureSeedData();

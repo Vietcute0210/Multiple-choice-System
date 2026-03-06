@@ -1,128 +1,130 @@
-﻿<!DOCTYPE html>
-<html lang="vi">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>PTIT Exam - Trang chủ</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;600;700;800&family=Oswald:wght@500;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="assets/css/base.css" />
-  <link rel="stylesheet" href="assets/css/components.css" />
-  <link rel="stylesheet" href="assets/css/home.css" />
-</head>
-<body>
-  <header class="topbar topbar-portal">
-    <div class="logo-row">
-      <img src="assets/images/ptit.png" alt="PTIT" />
-      <strong>PTIT Exam System</strong>
-    </div>
-    <div class="topbar-right">
-      <button class="icon-btn" type="button" aria-label="Thông báo">!</button>
-      <div class="user-chip user-chip-portal">
-        <div class="user-meta">
-          <strong id="user-name">Sinh viên</strong>
-          <span id="user-msv">BxxDCCNxxx</span>
-        </div>
-        <span class="user-avatar" id="user-avatar">SV</span>
-      </div>
-      <button class="btn btn-outline btn-sm" id="btn-logout" type="button">Đăng xuất</button>
-    </div>
-  </header>
-
-  <main class="main-area container home-main">
-    <section class="hero-banner" id="featured-exam"></section>
-
-    <section class="summary-grid" id="my-summary"></section>
-
-    <section class="exam-toolbar">
-      <div class="type-tabs" id="type-tabs">
-        <button type="button" class="tab-btn active" data-type="">Tất cả</button>
-        <button type="button" class="tab-btn" data-type="Luyện tập">Luyện tập</button>
-        <button type="button" class="tab-btn" data-type="Giữa kỳ">Giữa kỳ</button>
-        <button type="button" class="tab-btn" data-type="Cuối kỳ">Cuối kỳ</button>
-      </div>
-      <div class="toolbar-right">
-        <div class="search-wrap">
-          <input class="form-control" id="exam-search" type="text" placeholder="Tìm kiếm kỳ thi, môn học..." />
-        </div>
-        <select class="form-control" id="exam-filter">
-          <option value="">Tất cả loại</option>
-          <option value="Luyện tập">Luyện tập</option>
-          <option value="Giữa kỳ">Giữa kỳ</option>
-          <option value="Cuối kỳ">Cuối kỳ</option>
-        </select>
-        <select class="form-control" id="status-filter">
-          <option value="">Tất cả trạng thái</option>
-          <option value="free">Tự do</option>
-          <option value="scheduled">Có lịch</option>
-          <option value="active">Đang mở</option>
-          <option value="closed">Đã đóng</option>
-        </select>
-      </div>
-    </section>
-
-    <section class="section-head">
-      <h1 class="page-title">Danh sách kỳ thi</h1>
-    </section>
-
-    <section id="exams-grid" class="exams-grid"></section>
-
-    <nav class="pagination-row" aria-label="Phân trang">
-      <button type="button" class="page-btn">&lt;</button>
-      <button type="button" class="page-btn active">1</button>
-      <button type="button" class="page-btn">2</button>
-      <button type="button" class="page-btn">3</button>
-      <button type="button" class="page-btn">...</button>
-      <button type="button" class="page-btn">10</button>
-      <button type="button" class="page-btn">&gt;</button>
-    </nav>
-
-    <section class="home-bottom-grid">
-      <article class="helper-card">
-        <h3>Mẹo làm bài thi hiệu quả</h3>
-        <ul>
-          <li>Kiểm tra đề và ước lượng thời gian ngay khi bắt đầu.</li>
-          <li>Phân bổ thời gian hợp lý, không nên dành quá 2 phút cho một câu.</li>
-          <li>Đọc kỹ yêu cầu đề bài và kiểm tra câu trả lời trước khi nộp.</li>
-        </ul>
-        <a href="#">Xem hướng dẫn chi tiết</a>
-      </article>
-      <div class="mini-cards">
-        <article class="mini-card">
-          <h4>Lịch thi</h4>
-          <p>Xem lịch cá nhân để theo dõi trong học kỳ của bạn.</p>
-        </article>
-        <article class="mini-card">
-          <h4>Tài liệu</h4>
-          <p>Ôn tập với kho tài liệu chính thống từ giảng viên.</p>
-        </article>
-      </div>
-    </section>
-  </main>
-
-  <footer class="site-footer">
-    <div class="container footer-grid">
-      <section>
-        <h3>PTIT Exam System</h3>
-        <p>Học viện Công nghệ Bưu chính Viễn thông. Hệ thống quản lý thi trắc nghiệm trực tuyến chuyên nghiệp cho sinh viên.</p>
-      </section>
-      <section>
-        <h4>QUICK LINKS</h4>
-        <a href="home.html">Trang chủ</a>
-        <a href="results.html">Danh sách kỳ thi</a>
-        <a href="results.html">Kết quả học tập</a>
-      </section>
-      <section>
-        <h4>HỖ TRỢ</h4>
-        <a href="#">Trung tâm hỗ trợ</a>
-        <a href="#">Liên hệ kỹ thuật</a>
-        <a href="#">Chính sách bảo mật</a>
-      </section>
-    </div>
-    <div class="footer-copy">© 2026 PTIT Exam System. All rights reserved.</div>
-  </footer>
-
-  <script type="module" src="assets/js/pages/home-page.js"></script>
-</body>
-</html>
+<!DOCTYPE html>
+<!-- Trang home.html -->
+
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PTIT Exam - Trang chủ</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;600;700;800&family=Oswald:wght@500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/base.css" />
+  <link rel="stylesheet" href="assets/css/components.css" />
+  <link rel="stylesheet" href="assets/css/home.css" />
+</head>
+<body>
+  <header class="topbar topbar-portal">
+    <div class="logo-row">
+      <img src="assets/images/ptit.png" alt="PTIT" />
+      <strong>PTIT Exam System</strong>
+    </div>
+    <div class="topbar-right">
+      <button class="icon-btn" type="button" aria-label="Thông báo">!</button>
+      <div class="user-chip user-chip-portal">
+        <div class="user-meta">
+          <strong id="user-name">Sinh viên</strong>
+          <span id="user-msv">BxxDCCNxxx</span>
+        </div>
+        <span class="user-avatar" id="user-avatar">SV</span>
+      </div>
+      <button class="btn btn-outline btn-sm" id="btn-logout" type="button">Đăng xuất</button>
+    </div>
+  </header>
+
+  <main class="main-area container home-main">
+    <section class="hero-banner" id="featured-exam"></section>
+
+    <section class="summary-grid" id="my-summary"></section>
+
+    <section class="exam-toolbar">
+      <div class="type-tabs" id="type-tabs">
+        <button type="button" class="tab-btn active" data-type="">Tất cả</button>
+        <button type="button" class="tab-btn" data-type="Luyện tập">Luyện tập</button>
+        <button type="button" class="tab-btn" data-type="Giữa kỳ">Giữa kỳ</button>
+        <button type="button" class="tab-btn" data-type="Cuối kỳ">Cuối kỳ</button>
+      </div>
+      <div class="toolbar-right">
+        <div class="search-wrap">
+          <input class="form-control" id="exam-search" type="text" placeholder="Tìm kiếm kỳ thi, môn học..." />
+        </div>
+        <select class="form-control" id="exam-filter">
+          <option value="">Tất cả loại</option>
+          <option value="Luyện tập">Luyện tập</option>
+          <option value="Giữa kỳ">Giữa kỳ</option>
+          <option value="Cuối kỳ">Cuối kỳ</option>
+        </select>
+        <select class="form-control" id="status-filter">
+          <option value="">Tất cả trạng thái</option>
+          <option value="free">Tự do</option>
+          <option value="scheduled">Có lịch</option>
+          <option value="active">Đang mở</option>
+          <option value="closed">Đã đóng</option>
+        </select>
+      </div>
+    </section>
+
+    <section class="section-head">
+      <h1 class="page-title">Danh sách kỳ thi</h1>
+    </section>
+
+    <section id="exams-grid" class="exams-grid"></section>
+
+    <nav class="pagination-row" aria-label="Phân trang">
+      <button type="button" class="page-btn">&lt;</button>
+      <button type="button" class="page-btn active">1</button>
+      <button type="button" class="page-btn">2</button>
+      <button type="button" class="page-btn">3</button>
+      <button type="button" class="page-btn">...</button>
+      <button type="button" class="page-btn">10</button>
+      <button type="button" class="page-btn">&gt;</button>
+    </nav>
+
+    <section class="home-bottom-grid">
+      <article class="helper-card">
+        <h3>Mẹo làm bài thi hiệu quả</h3>
+        <ul>
+          <li>Kiểm tra đề và ước lượng thời gian ngay khi bắt đầu.</li>
+          <li>Phân bổ thời gian hợp lý, không nên dành quá 2 phút cho một câu.</li>
+          <li>Đọc kỹ yêu cầu đề bài và kiểm tra câu trả lời trước khi nộp.</li>
+        </ul>
+        <a href="#">Xem hướng dẫn chi tiết</a>
+      </article>
+      <div class="mini-cards">
+        <article class="mini-card">
+          <h4>Lịch thi</h4>
+          <p>Xem lịch cá nhân để theo dõi trong học kỳ của bạn.</p>
+        </article>
+        <article class="mini-card">
+          <h4>Tài liệu</h4>
+          <p>Ôn tập với kho tài liệu chính thống từ giảng viên.</p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <section>
+        <h3>PTIT Exam System</h3>
+        <p>Học viện Công nghệ Bưu chính Viễn thông. Hệ thống quản lý thi trắc nghiệm trực tuyến chuyên nghiệp cho sinh viên.</p>
+      </section>
+      <section>
+        <h4>QUICK LINKS</h4>
+        <a href="home.html">Trang chủ</a>
+        <a href="results.html">Danh sách kỳ thi</a>
+        <a href="results.html">Kết quả học tập</a>
+      </section>
+      <section>
+        <h4>HỖ TRỢ</h4>
+        <a href="#">Trung tâm hỗ trợ</a>
+        <a href="#">Liên hệ kỹ thuật</a>
+        <a href="#">Chính sách bảo mật</a>
+      </section>
+    </div>
+    <div class="footer-copy">© 2026 PTIT Exam System. All rights reserved.</div>
+  </footer>
+
+  <script type="module" src="assets/js/pages/home-page.js"></script>
+</body>
+</html>

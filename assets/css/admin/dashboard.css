@@ -1,8 +1,10 @@
-﻿.chart-box {
-  height: 250px;
-}
-
-.activity-note {
-  font-size: 0.78rem;
-  color: var(--text-muted);
-}
+/* Styles cho dashboard.css */
+
+.chart-box {
+  height: 250px;
+}
+
+.activity-note {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+}

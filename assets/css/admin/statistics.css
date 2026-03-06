@@ -1,9 +1,11 @@
-﻿.stat-filter-row {
-  display: flex;
-  gap: 8px;
-  flex-wrap: wrap;
-}
-
-.stat-chart {
-  height: 260px;
-}
+/* Styles cho statistics.css */
+
+.stat-filter-row {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.stat-chart {
+  height: 260px;
+}

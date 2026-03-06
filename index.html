@@ -1,78 +1,80 @@
-﻿<!DOCTYPE html>
-<html lang="vi">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>PTIT Exam - Đăng nhập</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;600;700;800&family=Oswald:wght@500;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="assets/css/base.css" />
-  <link rel="stylesheet" href="assets/css/components.css" />
-  <link rel="stylesheet" href="assets/css/auth.css" />
-</head>
-<body class="auth-page student-auth-page">
-  <div class="auth-shell">
-    <div class="auth-wrap student-auth-wrap">
-      <aside class="auth-brand">
-        <div class="auth-brand-head">
-          <img src="assets/images/ptit.png" alt="PTIT" class="brand-logo" />
-          <strong>PTIT EXAM SYSTEM</strong>
-        </div>
-        <h1>Nâng tầm tri thức,<br />Kiến tạo tương lai.</h1>
-        <p>Hệ thống quản lý và tổ chức thi trực tuyến hiện đại dành riêng cho sinh viên Học viện Công nghệ Bưu chính Viễn thông.</p>
-        <ul class="auth-brand-list">
-          <li>Bảo mật thông tin và kết quả chính xác</li>
-          <li>Hỗ trợ sinh viên 24/7 qua cổng trực tuyến</li>
-        </ul>
-        <p class="auth-brand-copy">© 2026 PTIT Exam System.</p>
-      </aside>
-
-      <main class="auth-form">
-        <section class="auth-card">
-          <h2>Xin chào!</h2>
-          <p class="subtitle">Vui lòng đăng nhập để bắt đầu kỳ thi của bạn hoặc quản lý kết quả học tập.</p>
-
-          <nav class="auth-switch" aria-label="Auth switch">
-            <a class="active" href="index.html">Đăng nhập</a>
-            <a href="register.html">Đăng ký</a>
-          </nav>
-
-          <form id="login-form" class="form-grid" novalidate>
-            <div class="field" id="field-login-user">
-              <label class="form-label" for="login-user">Tên đăng nhập hoặc Email</label>
-              <input class="form-control" id="login-user" type="text" placeholder="nhap.ten@student.ptit.edu.vn" />
-              <div class="form-error">Vui lòng nhập tên đăng nhập.</div>
-            </div>
-            <div class="field" id="field-login-pass">
-              <div class="field-head">
-                <label class="form-label" for="login-pass">Mật khẩu</label>
-                <a class="field-link" href="#">Quên mật khẩu?</a>
-              </div>
-              <input class="form-control" id="login-pass" type="password" placeholder="••••••••••" />
-              <div class="form-error">Vui lòng nhập mật khẩu.</div>
-            </div>
-            <label class="remember-row">
-              <input type="checkbox" />
-              <span>Ghi nhớ đăng nhập</span>
-            </label>
-            <div class="auth-rows">
-              <button class="btn btn-primary btn-full" type="submit">Đăng nhập ngay</button>
-              <button class="btn btn-outline btn-full" id="btn-demo-student" type="button">Đăng nhập demo</button>
-            </div>
-          </form>
-
-          <div class="auth-divider">HOẶC SỬ DỤNG CỔNG QUẢN LÝ</div>
-          <a class="btn btn-outline btn-full admin-portal-btn" href="admin/login.html">Cổng quản trị viên</a>
-
-          <p class="auth-help">
-            Gặp sự cố khi đăng nhập? <a href="#">Liên hệ kỹ thuật</a>
-          </p>
-        </section>
-      </main>
-    </div>
-  </div>
-
-  <script type="module" src="assets/js/pages/login-page.js"></script>
-</body>
-</html>
+<!DOCTYPE html>
+<!-- Trang index.html -->
+
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PTIT Exam - Đăng nhập</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;600;700;800&family=Oswald:wght@500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/base.css" />
+  <link rel="stylesheet" href="assets/css/components.css" />
+  <link rel="stylesheet" href="assets/css/auth.css" />
+</head>
+<body class="auth-page student-auth-page">
+  <div class="auth-shell">
+    <div class="auth-wrap student-auth-wrap">
+      <aside class="auth-brand">
+        <div class="auth-brand-head">
+          <img src="assets/images/ptit.png" alt="PTIT" class="brand-logo" />
+          <strong>PTIT EXAM SYSTEM</strong>
+        </div>
+        <h1>Nâng tầm tri thức,<br />Kiến tạo tương lai.</h1>
+        <p>Hệ thống quản lý và tổ chức thi trực tuyến hiện đại dành riêng cho sinh viên Học viện Công nghệ Bưu chính Viễn thông.</p>
+        <ul class="auth-brand-list">
+          <li>Bảo mật thông tin và kết quả chính xác</li>
+          <li>Hỗ trợ sinh viên 24/7 qua cổng trực tuyến</li>
+        </ul>
+        <p class="auth-brand-copy">© 2026 PTIT Exam System.</p>
+      </aside>
+
+      <main class="auth-form">
+        <section class="auth-card">
+          <h2>Xin chào!</h2>
+          <p class="subtitle">Vui lòng đăng nhập để bắt đầu kỳ thi của bạn hoặc quản lý kết quả học tập.</p>
+
+          <nav class="auth-switch" aria-label="Auth switch">
+            <a class="active" href="index.html">Đăng nhập</a>
+            <a href="register.html">Đăng ký</a>
+          </nav>
+
+          <form id="login-form" class="form-grid" novalidate>
+            <div class="field" id="field-login-user">
+              <label class="form-label" for="login-user">Tên đăng nhập hoặc Email</label>
+              <input class="form-control" id="login-user" type="text" placeholder="nhap.ten@student.ptit.edu.vn" />
+              <div class="form-error">Vui lòng nhập tên đăng nhập.</div>
+            </div>
+            <div class="field" id="field-login-pass">
+              <div class="field-head">
+                <label class="form-label" for="login-pass">Mật khẩu</label>
+                <a class="field-link" href="#">Quên mật khẩu?</a>
+              </div>
+              <input class="form-control" id="login-pass" type="password" placeholder="••••••••••" />
+              <div class="form-error">Vui lòng nhập mật khẩu.</div>
+            </div>
+            <label class="remember-row">
+              <input type="checkbox" />
+              <span>Ghi nhớ đăng nhập</span>
+            </label>
+            <div class="auth-rows">
+              <button class="btn btn-primary btn-full" type="submit">Đăng nhập ngay</button>
+              <button class="btn btn-outline btn-full" id="btn-demo-student" type="button">Đăng nhập demo</button>
+            </div>
+          </form>
+
+          <div class="auth-divider">HOẶC SỬ DỤNG CỔNG QUẢN LÝ</div>
+          <a class="btn btn-outline btn-full admin-portal-btn" href="admin/login.html">Cổng quản trị viên</a>
+
+          <p class="auth-help">
+            Gặp sự cố khi đăng nhập? <a href="#">Liên hệ kỹ thuật</a>
+          </p>
+        </section>
+      </main>
+    </div>
+  </div>
+
+  <script type="module" src="assets/js/pages/login-page.js"></script>
+</body>
+</html>
